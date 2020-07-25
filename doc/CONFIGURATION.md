@@ -240,7 +240,8 @@ Here's a good configuration for connecting to the APRS-IS core:
 
 The server command argument is typically used when connecting to a server filter port.
 in that case a command might look like
-    Uplink "Core Filter" ro tcp rotate.aprs.net 14580 filter r/33.25/-96.5/50
+    
+    Uplink "Core Filter" full tcp rotate.aprs.net 14580 filter r/33.25/-96.5/50
 
 
 ### Binding source address when connecting upstream (optional) ###
