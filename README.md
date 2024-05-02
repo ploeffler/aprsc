@@ -13,7 +13,7 @@ Other devices, be it your LoRa-Gateway , the weather-station, the baloon-tracker
 
 So at the end you have a dedicated server-connection for any of these. Every connection produces (it may be very little) load on the APRS-IS core server that is connected to. In addition, if your internet (or 44.0.0.0/8) connection is lost, you are relatively blind.
 
-Here comes a locally running instance of an "APRS-IS" server into play. The packages, that are included in some linux distros, request the full feed of the upstream server, that generate a constant datastream of about 19kB/s, which can exhoust your datavolume at some time. The additions of [dgentges](https://github.com/dgentges) to the original APRSc code implement the ability to filter the upstream (to be precise, its the downstream) server connection with the well known serverside filter commands.
+Here comes a locally running instance of an "APRS-IS" server into play. The packages, that are included in some linux distros, request the full feed of the upstream server, that generate a constant datastream of about 19kB/s, which can exhaust your datavolume at some time. The additions of [dgentges](https://github.com/dgentges) to the original APRSc code implement the ability to filter the upstream (to be precise, its the downstream) server connection with the well known serverside filter commands.
 
 Running your own, local APRSc has the following advantages:
 
