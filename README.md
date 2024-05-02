@@ -10,14 +10,14 @@ So if you plan to run an "APRS-IS server" within your own network (and there are
 
 ## Installation
 
-'''shell
+```shell
 cd ~
 git clone https://github.com/ploeffler/aprsc
 cd aprsc/src
 ./configure
 make
 sudo make install
-'''
+```
 
 This will install the entire server in /opt/aprsc. The config-file is in etc/.
 
@@ -25,9 +25,9 @@ This will install the entire server in /opt/aprsc. The config-file is in etc/.
 
 The magic trick is the following line:
 
-'''shell
+```shell
 Uplink "Core filtered" full  tcp  rotate.aprs.net 14580 filter r/46.0/15.0/1000
-'''
+```
 
 If you are not familiar with the use of server-side filters: please [check this page](https://www.aprs-is.net/javAPRSFilter.aspx)
 
