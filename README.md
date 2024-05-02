@@ -4,14 +4,28 @@
 You're looking at the source code of aprsc, an open-source APRS-IS
 server. This Code was initially written by [Hessu, OH7LZB](https://github.com/hessu/aprsc). Upstream server connections in his work are not filterable. You always got the full APRS-IS stream (abt 19k/s).
 
-Additionally some code was added by [dgentges](https://github.com/dgentges) which made the upstream server-connection filterable.
+Additionally some code was added by [dgentges](https://github.com/dgentges) that made the upstream server-connection filterable.
 
-So if you plan to run an "APRS-IS server" within your own network (and there are plenty of reasons to do so) then THIS is the repo to start.
+## Reasons to run APRSc on your local network
+
+Maybe you have a direwolf setup running your 2m and/or 70cm APSR station. Ofcourse dirwolf needs a connection to the APRS-IS network to send/receive data from.
+Other devices, be it your LoRa-Gateway , the weather-station, the baloon-tracker, ... also require a connection to these servers. The same applies for your prefered user-program (xastir, UiView, ..)
+
+So at the end you have a dedicated server-connection for any of these. Every connection produces (it may be very little) load on the APRS-IS core server that is connected to. In addition, if your internet (or 44.0.0.0/8) connection is lost, you are relatively blind.
+
+Here comes a locally running instance of an "APRS-IS" server into play. The packages, that are included in some linux distros, request the full feed of the upstream server, that generate a constant datastream of about 19kB/s, which can exhoust your datavolume at some time. The additions of [dgentges](https://github.com/dgentges) to the original APRSc code implement the ability to filter the upstream (to be precise, its the downstream) server connection with the well known serverside filter commands.
+
+Running your own, local APRSc has the following advantages:
+
+- never be blind when internet is down
+- reduce the load on the core servers
+- reduce the bandwith needed for APRS-data
 
 ## Installation
 
 ```shell
 cd ~
+apt-get install build-essential autoconf make git vim libevent-dev -y
 git clone https://github.com/ploeffler/aprsc
 cd aprsc/src
 ./configure
@@ -35,15 +49,6 @@ If you are not familiar with the use of server-side filters: please [check this 
 
 A dockerized version of this server is available at [this repo](https://github.com/ploeffler/aprsc-docker)
 
-## Additional information
-
-For more information, please refer to the following resources:
-
-* [Home page](http://he.fi/aprsc/)
-* [Installation instructions](http://he.fi/aprsc/INSTALLING.html)
-* [Source code downloads](http://he.fi/aprsc/down/)
-* [Conference paper, Digital Communications Conference 2012, Atlanta, GA](http://he.fi/aprsc/dcc-2012-aprsc.pdf)
-* [Contributing to the aprsc project](http://he.fi/aprsc/CONTRIBUTING.html)
 
 Have fun!
 
