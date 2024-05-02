@@ -1,5 +1,5 @@
 
-# aprsc - an APRS-IS server in C
+# aprsc - an APRS-IS server in C with filtered connection to the core servers
 
 You're looking at the source code of aprsc, an open-source APRS-IS
 server. This Code was initially written by [Hessu, OH7LZB](https://github.com/hessu/aprsc). Upstream server connections in his work are not filterable. You always got the full APRS-IS stream (abt 19k/s).
@@ -49,7 +49,6 @@ If you are not familiar with the use of server-side filters: please [check this 
 
 A dockerized version of this server is available at [this repo](https://github.com/ploeffler/aprsc-docker)
 
-
 Have fun!
 
-Peter, OE6PLD 
+Peter, OE6PLD
