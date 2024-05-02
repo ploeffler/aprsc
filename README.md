@@ -37,6 +37,17 @@ This will install the entire server in /opt/aprsc. The config-file is in etc/.
 
 ## Configuration
 
+You will have to change these lines in the configuration:
+
+```shell
+ServerId   NOCALL
+PassCode   0
+MyAdmin    "My Name, MYCALL"
+MyEmail    email@example.com
+Uplink "Core filtered" full  tcp  rotate.aprs.net 14580 filter r/46.0/15.0/1000
+MagicBadness	42.7
+```
+
 The magic trick is the following line:
 
 ```shell
@@ -44,6 +55,12 @@ Uplink "Core filtered" full  tcp  rotate.aprs.net 14580 filter r/46.0/15.0/1000
 ```
 
 If you are not familiar with the use of server-side filters: please [check this page](https://www.aprs-is.net/javAPRSFilter.aspx)
+
+Be sure to remove the line:
+
+```shell
+MagicBadness	42.7
+```
 
 ## Docker
 
